@@ -66,8 +66,9 @@ nav a:hover,nav a:focus-visible,.cta:hover{color:var(--steel) !important}
 nav a::after{background:var(--steel) !important}
 
 .hero{position:relative; padding-top:84px; background:#E4E4E4; color:#0A0A0A; overflow:hidden}
-.hero-media{position:relative}
-.hero-img{display:block; width:100%; height:auto}
+.hero-media{position:relative; width:fit-content; max-width:100%}
+.hero-img{display:block; width:auto; height:auto; max-width:100%; max-height:calc(100vh - 84px); max-height:calc(100svh - 84px)}
+.hero-media::after{content:""; position:absolute; top:0; right:-1px; bottom:0; width:16%; background:linear-gradient(to right, rgba(228,228,228,0), #E4E4E4); pointer-events:none}
 .hero-cap{position:absolute; left:37.5%; bottom:7%; font-family:var(--serif); font-style:italic; font-size:clamp(13px,1.1vw,17px); letter-spacing:0; color:#3E6E9C; white-space:nowrap}
 .hero .wrap{position:absolute; top:84px; bottom:0; left:0; right:0; align-content:center; width:100%; display:grid; grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr); padding-top:0; padding-bottom:6%}
 .hero-copy{grid-column:2; display:flex; flex-direction:column; gap:clamp(16px,2vw,28px)}
@@ -300,7 +301,9 @@ footer .wrap.foot{display:flex; flex-direction:column; justify-content:center; a
 }
 @media (max-width:560px){
   .hero{background:#F2F2F2}
-  .hero-img{height:62vh; object-fit:cover; object-position:24% 50%}
+  .hero-media{width:auto}
+  .hero-media::after{display:none}
+  .hero-img{width:100%; max-height:none; height:62vh; object-fit:cover; object-position:24% 50%}
   .hero-cap{left:auto; right:16px; bottom:14px; font-size:14px}
   .hero .wrap{position:static; grid-template-columns:minmax(0,1fr); padding-top:40px; padding-bottom:64px}
   .hero-copy{grid-column:1}
