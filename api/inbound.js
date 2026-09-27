@@ -65,6 +65,7 @@ module.exports = async (req, res) => {
     const header = `<p style="font:13px/1.4 -apple-system,Helvetica,Arial,sans-serif;color:#666;border-bottom:1px solid #ddd;padding-bottom:8px;margin-bottom:16px">
       Forwarded from <strong>advisory@mitchhagy.com</strong><br>From: ${String(from).replace(/</g, '&lt;')}</p>`;
 
+    if (!process.env.FORWARD_TO) throw new Error('FORWARD_TO environment variable is not set');
     await resend('/emails', {
       method: 'POST',
       body: JSON.stringify({
@@ -79,6 +80,6 @@ module.exports = async (req, res) => {
     return res.status(200).send('Forwarded');
   } catch (e) {
     console.error(e);
-    return res.status(500).send('Forward failed');
+    return res.status(500).send('Forward failed: ' + (e && e.message ? e.message : String(e)));
   }
 };
