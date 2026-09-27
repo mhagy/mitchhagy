@@ -46,7 +46,7 @@ module.exports = async (req, res) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'MGH Advisory <advisory@mitchhagy.com>',
+        from: 'MGH Advisory <advisory@mghagy.com>',
         to: [process.env.CONTACT_TO],
         reply_to: email,
         subject: `Consultation request from ${name}`,
