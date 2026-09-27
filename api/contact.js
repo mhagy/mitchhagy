@@ -26,6 +26,10 @@ module.exports = async (req, res) => {
     return res.status(400).json({ error: 'Please include your name and a valid email.' });
   }
 
+  if (!process.env.RESEND_API_KEY || !process.env.CONTACT_TO) {
+    return res.status(500).json({ error: 'Missing RESEND_API_KEY or CONTACT_TO environment variable' });
+  }
+
   const html = `
     <h2>New consultation request</h2>
     <p><strong>Name:</strong> ${esc(name)}</p>
@@ -52,11 +56,11 @@ module.exports = async (req, res) => {
     if (!r.ok) {
       const t = await r.text();
       console.error('Resend error', t);
-      return res.status(502).json({ error: 'Email service error' });
+      return res.status(502).json({ error: 'Email service error', detail: t });
     }
     return res.status(200).json({ ok: true });
   } catch (e) {
     console.error(e);
-    return res.status(500).json({ error: 'Server error' });
+    return res.status(500).json({ error: 'Server error', detail: String(e && e.message || e) });
   }
 };
