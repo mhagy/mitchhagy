@@ -447,11 +447,12 @@ footer .wrap.foot{display:flex; flex-direction:column; justify-content:center; a
         <h2 class="rv">Serving as <em>your advocate.</em></h2>
         <p class="lead rv d1">Our first conversation is about learning who you are and what you want. No time limits, no pitch — just an honest read on where you stand and where you want to go.</p>
         <div class="meta rv d2">
-          <a href="mailto:mitch@mitchhagy.com">mitch@mitchhagy.com</a>
+          <a href="mailto:advisory@mitchhagy.com">advisory@mitchhagy.com</a>
           <span class="mono" style="color:var(--muted)">Grand Junction, CO · In person &amp; remote</span>
         </div>
       </div>
       <form id="contactForm" class="rv d2">
+        <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <div class="field"><label class="mono" for="f-name">Name</label><input id="f-name" type="text" name="name" autocomplete="name" required></div>
         <div class="field"><label class="mono" for="f-email">Email</label><input id="f-email" type="email" name="email" autocomplete="email" required></div>
         <div class="field"><label class="mono" for="f-stage">Where are you?</label>
@@ -499,10 +500,19 @@ footer .wrap.foot{display:flex; flex-direction:column; justify-content:center; a
     var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
     els.forEach(function(el){ io.observe(el); });
   } else { els.forEach(function(el){ el.classList.add('in'); }); }
-  document.getElementById('contactForm').addEventListener('submit', function(e){
-    e.preventDefault(); var f=e.target;
-    var body='Name: '+f.name.value+'\nEmail: '+f.email.value+'\nStage: '+f.stage.value+'\n\n'+f.message.value;
-    window.open('mailto:mitch@mitchhagy.com?subject='+encodeURIComponent('Consultation request')+'&body='+encodeURIComponent(body),'_blank');
+  var cf=document.getElementById('contactForm');
+  cf.addEventListener('submit', function(e){
+    e.preventDefault(); var f=e.target; var btn=f.querySelector('button[type=submit]');
+    var data={name:f.name.value, email:f.email.value, stage:f.stage.value, message:f.message.value, company:(f.company?f.company.value:'')};
+    var original=btn.innerHTML; btn.disabled=true; btn.textContent='Sending…';
+    fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+      .then(function(r){ if(!r.ok) throw new Error('fail'); return r.json(); })
+      .then(function(){ f.innerHTML='<div style="padding:24px 0"><div class="mono" style="color:var(--muted);margin-bottom:14px">Request received</div><p style="font-family:var(--serif);font-size:clamp(26px,2.4vw,36px);line-height:1.2;margin:0">Thank you, '+data.name.replace(/[<>&]/g,'')+'. I\'ll be in touch shortly.</p></div>'; })
+      .catch(function(){
+        btn.disabled=false; btn.innerHTML=original;
+        var body='Name: '+data.name+'\nEmail: '+data.email+'\nStage: '+data.stage+'\n\n'+data.message;
+        window.location.href='mailto:advisory@mitchhagy.com?subject='+encodeURIComponent('Consultation request')+'&body='+encodeURIComponent(body);
+      });
   });
 })();
 </script>
