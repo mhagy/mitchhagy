@@ -278,6 +278,12 @@ footer .wrap.foot{display:flex; flex-direction:column; justify-content:center; a
 .foot-nav{display:flex; flex-wrap:wrap; justify-content:center; gap:8px 22px}
 .foot-nav a{color:var(--ivory); text-decoration:none}
 .foot-nav a:hover{color:#7BA3CC}
+
+.to-top-wrap{background:#FFFFFF; text-align:center; padding:8px 0 44px}
+.to-top{display:inline-flex; align-items:center; gap:10px; color:#0A0A0A; text-decoration:none; padding:12px 22px; border:1px solid #CFCFCF; transition:color .3s, border-color .3s}
+.to-top span{font-size:14px; transition:transform .3s}
+.to-top:hover{color:#3E6E9C; border-color:#3E6E9C}
+.to-top:hover span{transform:translateY(-3px)}
 @media (max-width:1024px){
   .voice .grid,.story .grid,.contact .grid,.practice .head,.gallery{grid-template-columns:minmax(0,1fr)}
   .voice h2,.story .side{position:static}
@@ -474,6 +480,8 @@ footer .wrap.foot{display:flex; flex-direction:column; justify-content:center; a
     </div>
   </section>
 </main>
+
+<div class="to-top-wrap"><a class="to-top mono" href="#top" aria-label="Back to top">Back to top <span aria-hidden="true">↑</span></a></div>
 
 <footer>
   <div class="wrap foot">
