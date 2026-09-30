@@ -304,6 +304,24 @@ footer .wrap.foot{display:flex; flex-direction:column; justify-content:center; a
 @media (max-width:1180px){ .dm-grid{grid-template-columns:repeat(3,minmax(0,1fr))} }
 @media (max-width:900px){ .mind-head{grid-template-columns:minmax(0,1fr)} .dm-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
 @media (max-width:560px){ .dm-grid{grid-template-columns:minmax(0,1fr)} .dm h3{min-height:0} }
+
+.spine{min-width:720px}
+.loops{display:block; width:100%; height:auto; margin-bottom:-4px}
+.phases6{grid-template-columns:repeat(8,minmax(0,1fr)) !important}
+.phases6::before,.phases6::after{right:calc(100% / 6 - 9px) !important}
+.phases6 li{align-items:center; text-align:center; padding-right:0}
+.phases6::before,.phases6::after{left:calc(100% / 16) !important; right:calc(100% / 16) !important}
+.spine-note{margin:18px 0 0; color:rgba(255,255,255,.8); font-family:var(--serif); font-style:italic; font-size:18px}
+.decisions{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px}
+.dec{border:1px dashed rgba(255,255,255,.45); padding:16px 18px}
+.dec h4{margin:0 0 6px; font-family:var(--serif); font-weight:400; font-size:24px; color:#FFFFFF}
+.dec p{margin:0; font-size:15px; line-height:1.5; color:rgba(255,255,255,.82)}
+.sources{margin-top:28px; border-top:1px solid rgba(255,255,255,.25); padding-top:14px}
+.sources summary{cursor:pointer; color:#A9C6E6; list-style:none}
+.sources summary::before{content:"+ "} .sources[open] summary::before{content:"– "}
+.sources ol{margin:14px 0 0; padding-left:20px; color:rgba(255,255,255,.85); font-size:14px; line-height:1.55}
+.sources li{margin-bottom:10px} .sources em{color:#FFFFFF; font-style:italic}
+@media (max-width:760px){ .decisions{grid-template-columns:minmax(0,1fr)} }
 @media (max-width:1024px){
   .voice .grid,.story .grid,.contact .grid,.practice .head,.gallery{grid-template-columns:minmax(0,1fr)}
   .voice h2,.story .side{position:static}
@@ -458,10 +476,41 @@ footer .wrap.foot{display:flex; flex-direction:column; justify-content:center; a
         </div>
         <p class="rv d1">From the first spark to the final handoff, I can help at every phase of the business. Every engagement begins with a complimentary conversation.</p>
       </div>
-      <div class="phases-wrap rv"><div class="mono phases-label">Every phase of the business</div><div class="phases-scroll"><ol class="phases"><li><span class="dot" aria-hidden="true"></span><span class="pn">01</span><span class="pt">Ideation</span></li><li><span class="dot" aria-hidden="true"></span><span class="pn">02</span><span class="pt">Discovery</span></li><li><span class="dot" aria-hidden="true"></span><span class="pn">03</span><span class="pt">Validation</span></li><li><span class="dot" aria-hidden="true"></span><span class="pn">04</span><span class="pt">Launch</span></li><li><span class="dot" aria-hidden="true"></span><span class="pn">05</span><span class="pt">Funding</span></li><li><span class="dot" aria-hidden="true"></span><span class="pn">06</span><span class="pt">Operations</span></li><li><span class="dot" aria-hidden="true"></span><span class="pn">07</span><span class="pt">Growth</span></li><li><span class="dot" aria-hidden="true"></span><span class="pn">08</span><span class="pt">Scaling</span></li><li><span class="dot" aria-hidden="true"></span><span class="pn">09</span><span class="pt">Exit</span></li></ol></div></div>
+      <div class="phases-wrap rv">
+        <div class="mono phases-label">How businesses actually move</div>
+        <div class="phases-scroll">
+          <div class="spine">
+            <svg class="loops" viewBox="0 0 600 80" aria-hidden="true">
+              <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9" fill="none" stroke="#A9C6E6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+              <path d="M262 76 C 238 12, 62 12, 41 70" fill="none" stroke="#A9C6E6" stroke-width="1.3" stroke-dasharray="4 4" marker-end="url(#ah)"/>
+              <text x="150" y="16" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" letter-spacing="1.5" fill="#A9C6E6">PIVOT</text>
+              <path d="M187 76 C 176 50, 124 50, 116 70" fill="none" stroke="#FFFFFF" stroke-width="1.3" marker-end="url(#ah)"/>
+              <text x="150" y="50" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" letter-spacing="1.5" fill="#FFFFFF">INVALIDATED</text>
+            </svg>
+            <ol class="phases phases6"><li><span class="dot" aria-hidden="true"></span><span class="pn">01</span><span class="pt">Ideation</span></li><li><span class="dot" aria-hidden="true"></span><span class="pn">02</span><span class="pt">Discovery</span></li><li><span class="dot" aria-hidden="true"></span><span class="pn">03</span><span class="pt">Validation</span></li><li><span class="dot" aria-hidden="true"></span><span class="pn">04</span><span class="pt">Launch</span></li><li><span class="dot" aria-hidden="true"></span><span class="pn">05</span><span class="pt">Operations</span></li><li><span class="dot" aria-hidden="true"></span><span class="pn">06</span><span class="pt">Growth</span></li><li><span class="dot" aria-hidden="true"></span><span class="pn">07</span><span class="pt">Scale</span></li><li><span class="dot" aria-hidden="true"></span><span class="pn">08</span><span class="pt">Exit</span></li></ol>
+          </div>
+        </div>
+        <p class="spine-note">The default path, not a requirement. Invalidation sends you back to discovery. A pivot can send you back to the idea itself.</p>
+        <div class="mono phases-label" style="margin-top:36px">Recurring decisions · at any point, or never</div>
+        <div class="decisions">
+          <div class="dec"><h4>Capital</h4><p>Most founders never raise outside money. Funding is a decision you may face many times, or not at all.</p></div>
+          <div class="dec"><h4>Scaling</h4><p>A deliberate choice, not a destiny. Many great businesses thrive by staying the right size.</p></div>
+          <div class="dec"><h4>Transition</h4><p>Succession, sale, absorption or closure. How you hand off what you built.</p></div>
+        </div>
+        <details class="sources">
+          <summary class="mono">The research behind this model</summary>
+          <ol>
+            <li>Levie, J. &amp; Lichtenstein, B. B. (2010). A terminal assessment of stages theory: Introducing a dynamic states approach to entrepreneurship. <em>Entrepreneurship Theory and Practice, 34</em>(2), 317–350. An analysis of 104 published stage models found no consensus on basic constructs and no empirical confirmation of stages theory.</li>
+            <li>Ewing Marion Kauffman Foundation. (2019). <em>Access to capital for entrepreneurs: Removing barriers.</em> At least 83 percent of entrepreneurs do not access bank loans or venture capital at startup; almost 65 percent rely on personal and family savings.</li>
+            <li>U.S. Small Business Administration, Office of Advocacy. (2022). <em>Small business finance FAQ.</em> Personal savings is the leading source of startup capital, and 11.3 percent of new employer firms used no capital at all.</li>
+            <li>U.S. Department of the Treasury. (2025). <em>Financing small business: Landscape and policy recommendations.</em> Only about 0.5 percent of new startups turn to external equity such as venture capital.</li>
+            <li>Sarasvathy, S. D. (2001). Causation and effectuation: Toward a theoretical shift from economic inevitability to entrepreneurial contingency. <em>Academy of Management Review, 26</em>(2), 243–263. Founders often start from the means at hand rather than a validated idea.</li>
+          </ol>
+        </details>
+      </div>
       <article class="svc rv"><div class="n">I.</div><h3>Start</h3><div><p class="q">"I have an idea and I can't stop thinking about it."</p><p>Let's pressure-test it with real research and data, validate it with real customers, shape the business model and pricing and map a launch you can actually execute.</p></div><div class="fee"><div class="tg-h">Phases</div><ol class="tg-phase"><li>Ideation</li><li>Discovery</li><li>Validation</li></ol><div class="tg-h">Disciplines</div><ul class="tg-disc"><li>Innovation</li><li>Marketing</li><li>Accounting</li><li>Finance</li><li>Strategy</li></ul></div></article>
       <article class="svc svc-alt rv"><div class="n">II.</div><h3>Restore</h3><div><p class="q">"I'm working harder than ever, and it isn't getting easier."</p><p>Let's find what's stuck — cash flow, inventory, pricing, marketing or you as the bottleneck — and put systems in place that give you your time back.</p></div><div class="fee"><div class="tg-h">Phases</div><ol class="tg-phase"><li>Launch</li><li>Operations</li><li>Growth</li></ol><div class="tg-h">Disciplines</div><ul class="tg-disc"><li>Operations</li><li>Marketing</li><li>Accounting</li><li>Finance</li><li>Strategy</li></ul></div></article>
-      <article class="svc rv"><div class="n">III.</div><h3>Ascend</h3><div><p class="q">"We've proven it works. Now what?"</p><p>A new location, product, technology or round of capital — let's make the big move with a plan, not a prayer.</p></div><div class="fee"><div class="tg-h">Phases</div><ol class="tg-phase"><li>Funding</li><li>Growth</li><li>Scaling</li><li>Exit</li></ol><div class="tg-h">Disciplines</div><ul class="tg-disc"><li>Innovation</li><li>Marketing</li><li>Finance</li><li>Strategy</li></ul></div></article>
+      <article class="svc rv"><div class="n">III.</div><h3>Ascend</h3><div><p class="q">"We've proven it works. Now what?"</p><p>A new location, product, technology or round of capital — let's make the big move with a plan, not a prayer.</p></div><div class="fee"><div class="tg-h">Phases</div><ol class="tg-phase"><li>Growth</li><li>Capital</li><li>Scaling</li><li>Transition</li></ol><div class="tg-h">Disciplines</div><ul class="tg-disc"><li>Innovation</li><li>Marketing</li><li>Finance</li><li>Strategy</li></ul></div></article>
       <article class="svc svc-alt rv"><div class="n">IV.</div><h3>Retainer</h3><div><p class="q">"I just need someone to think with."</p><p>An ongoing advisory seat — a standing voice for the calls that keep you up at night, whenever they come.</p></div><div class="fee"><div class="tg-h">Phases</div><ol class="tg-phase"><li>Every phase</li></ol><div class="tg-h">Disciplines</div><ul class="tg-disc"><li>Strategy</li><li>Leadership</li><li>Decision readiness</li><li>Entrepreneurial mindset</li></ul></div></article>
     </div>
   </section>
@@ -505,7 +554,7 @@ footer .wrap.foot{display:flex; flex-direction:column; justify-content:center; a
             <option>Start — I have an idea</option>
             <option>Restore — something's stuck</option>
             <option>Ascend — ready to grow</option>
-            <option>Exit — I am ready to retire</option>
+            <option>Transition — I am ready to retire or hand off</option>
             <option>Retainer — I need someone to think with</option>
           </select>
         </div>
