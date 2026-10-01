@@ -45,7 +45,7 @@ em{font-style:italic; color:var(--gold)}
 .rv.in{opacity:1; transform:none}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
-header{position:fixed; left:0; right:0; top:0; z-index:50; padding-top:env(safe-area-inset-top,0px); transition:background .5s var(--ease), border-color .5s; --hc:#0A0A0A; --hm:#555555; --hbg:#F5F5F5; --steel:#3E6E9C}
+header{position:fixed; left:0; right:0; top:0; z-index:50; padding-top:env(safe-area-inset-top,0px); transition:background .5s var(--ease), border-color .5s; background:#1E3A5F; border-bottom:1px solid rgba(255,255,255,.12); --hc:#F5F5F5; --hm:#C9D3E0; --hbg:#1E3A5F; --steel:#A9C6E6}
 header.solid{--hc:#F5F5F5; --hm:#C9D3E0; --hbg:#1E3A5F; --steel:#A9C6E6}
 header.solid{background:rgba(30,58,95,.96); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid rgba(255,255,255,.12)}
 header .wrap{display:flex; align-items:center; justify-content:space-between; height:84px; gap:20px}
@@ -379,7 +379,7 @@ footer .wrap.foot{display:flex; flex-direction:column; justify-content:center; a
   .hero .wrap{position:static; grid-template-columns:minmax(0,1fr); padding-top:40px; padding-bottom:64px}
   .hero-copy{grid-column:1}
   .scroll-cue{display:none}
-  header:not(.solid){background:rgba(255,255,255,.75); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px)}
+  header:not(.solid){background:#1E3A5F}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none !important; transition:none !important}
