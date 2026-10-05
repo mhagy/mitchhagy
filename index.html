@@ -265,13 +265,13 @@ footer .big{font-family:'Archivo', 'Helvetica Neue', Arial, sans-serif; font-wei
 .why-photo img{display:block; width:100%; height:auto; box-shadow:0 24px 40px -18px rgba(0,0,0,.35)}
 @media (max-width:560px){ .why-top{grid-template-columns:minmax(0,1fr)} .why-photo{max-width:440px} }
 
-.why-hero{position:relative; background:#D9D9D9}
-.why-hero-img{display:block; width:100%; height:auto}
+.why-hero{position:relative; background:linear-gradient(to bottom,#B8B8B8 0%,#C6C6C6 20%,#C3C3C3 40%,#BCBCBC 60%,#B8B8B8 75%,#B3B3B3 80%,#C5C5C5 85%,#D4D4D4 90%,#DCDCDC 100%); display:flex; justify-content:flex-end}
+.why-hero-img{display:block; width:auto; height:auto; max-width:100%; max-height:calc(100vh - 84px); max-height:calc(100svh - 84px); -webkit-mask-image:linear-gradient(to right,transparent,#000 18%); mask-image:linear-gradient(to right,transparent,#000 18%)}
 .why-hero-copy{position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; max-width:1480px; margin:0 auto}
 .why-hero-copy h2{max-width:12ch; color:#0A0A0A}
 .why-hero-copy .label{color:#0A0A0A} .why-hero-copy .label::before{background:#0A0A0A}
 .why .row{margin-top:0}
-@media (max-width:560px){ .why-hero-copy{position:static; padding-top:32px} }
+@media (max-width:560px){ .why-hero{display:block} .why-hero-img{max-height:none; width:100%; -webkit-mask-image:none; mask-image:none} .why-hero-copy{position:static; padding-top:32px} }
 
 footer .wrap.foot{display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; flex-wrap:wrap; gap:10px; padding-top:22px; padding-bottom:22px; color:#C9D3E0}
 .foot-logo{display:flex; flex-direction:column; align-items:center; gap:3.8px; margin:6px 0 8px}
