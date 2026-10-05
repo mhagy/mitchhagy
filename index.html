@@ -345,6 +345,29 @@ footer .wrap.foot{display:flex; flex-direction:column; justify-content:center; a
 .svc-head h3{margin:0 0 10px; font-family:var(--serif); font-weight:400; font-size:clamp(36px,3.6vw,56px); line-height:1.05; color:#FFFFFF}
 .svc-head h3 em{color:#A9C6E6}
 .svc-head p{margin:0; color:rgba(255,255,255,.8); font-size:17px}
+
+.envi-grid{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(40px,6vw,96px); align-items:start}
+.envi h2{font-size:clamp(48px,6vw,96px)} .envi h2 em{color:#3E6E9C}
+.envi-lead{margin:24px 0 28px; color:#2A2A2A; font-size:clamp(18px,1.4vw,20px)}
+.envi-list{list-style:none; margin:0; padding:0; border-top:1px solid #C2C2C2}
+.envi-list li{padding:16px 0; border-bottom:1px solid #C2C2C2; display:flex; flex-direction:column; gap:4px}
+.envi-list strong{font-family:var(--serif); font-weight:400; font-size:22px; color:#1E3A5F}
+.envi-list span{color:#3A3A3A; font-size:16px}
+.envi-form{background:#FFFFFF; padding:clamp(24px,3vw,40px); display:flex; flex-direction:column; gap:18px; box-shadow:0 24px 50px -30px rgba(0,0,0,.35); position:relative}
+.envi-form h3{margin:0; font-family:var(--serif); font-weight:400; font-size:30px; color:#1E3A5F}
+.envi-note{margin:-8px 0 4px; color:#555; font-size:15px}
+.envi-form .field label{color:#555}
+.envi-form input,.envi-form select{color:#0A0A0A; border-bottom-color:#C2C2C2; font-size:17px}
+.envi-form select option{background:#fff; color:#0A0A0A}
+.ef-row{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+.chk{display:flex; gap:10px; align-items:flex-start; font-size:14.5px; line-height:1.45; color:#333; text-transform:none; letter-spacing:0; font-family:var(--sans)}
+.chk input{width:18px; height:18px; min-height:0; margin-top:2px; flex:none; accent-color:#1E3A5F}
+.chk a{color:#1E3A5F}
+.envi-form .btn{align-self:flex-start; background:#1E3A5F; color:#fff}
+.envi-form .btn:hover{background:#2A4F80; color:#fff}
+.ef-msg{margin:0; font-size:15px; color:#1E3A5F}
+@media (max-width:900px){ .envi-grid{grid-template-columns:minmax(0,1fr)} }
+@media (max-width:560px){ .ef-row{grid-template-columns:minmax(0,1fr)} }
 @media (max-width:1024px){
   .voice .grid,.story .grid,.contact .grid,.practice .head,.gallery{grid-template-columns:minmax(0,1fr)}
   .voice h2,.story .side{position:static}
@@ -399,6 +422,7 @@ footer .wrap.foot{display:flex; flex-direction:column; justify-content:center; a
       <span class="nav-div" aria-hidden="true"></span><a href="#voice">Counsel</a>
       <a href="#story">Story</a>
       <a href="#practice">Practice</a>
+      <a href="#envi">Free ENVI&trade;</a>
       <a class="cta" href="#contact">Consultation Request</a>
     </nav>
   </div>
@@ -487,6 +511,36 @@ footer .wrap.foot{display:flex; flex-direction:column; justify-content:center; a
         </div>
       </div>
       <div class="dm-grid"><article class="dm rv"><div class="dm-n">01</div><h3>Critical Thinking</h3><div class="dm-l">Why it matters</div><p>Separates signal from noise in markets, data and advice.</p><div class="dm-l">If it goes unrecognized</div><p>Unexamined assumptions quietly become expensive strategy.</p></article><article class="dm rv"><div class="dm-n">02</div><h3>Adaptability</h3><div class="dm-l">Why it matters</div><p>Markets shift faster than any plan written for them.</p><div class="dm-l">If it goes unrecognized</div><p>Rigidity looks like discipline right up until the market moves.</p></article><article class="dm rv"><div class="dm-n">03</div><h3>Conflict Resolution</h3><div class="dm-l">Why it matters</div><p>Partners, teams and customers will disagree. Growth depends on working through it.</p><div class="dm-l">If it goes unrecognized</div><p>Avoided conflict compounds into turnover and broken partnerships.</p></article><article class="dm rv"><div class="dm-n">04</div><h3>Emotional Intelligence: Self</h3><div class="dm-l">Why it matters</div><p>A founder's state of mind sets the tone for every decision and every person in the room.</p><div class="dm-l">If it goes unrecognized</div><p>Stress, ego and fear drive choices that feel perfectly rational.</p></article><article class="dm rv"><div class="dm-n">05</div><h3>Emotional Intelligence: Social</h3><div class="dm-l">Why it matters</div><p>Selling, hiring and leading all depend on reading people well.</p><div class="dm-l">If it goes unrecognized</div><p>You miss what customers and your team aren't saying out loud.</p></article><article class="dm rv"><div class="dm-n">06</div><h3>Ethical Reasoning</h3><div class="dm-l">Why it matters</div><p>Trust is the one asset that compounds faster than capital.</p><div class="dm-l">If it goes unrecognized</div><p>Small shortcuts made under pressure become the culture.</p></article><article class="dm rv"><div class="dm-n">07</div><h3>Execution Discipline</h3><div class="dm-l">Why it matters</div><p>Ideas are cheap. Follow-through is what builds companies.</p><div class="dm-l">If it goes unrecognized</div><p>Busy starts to feel like progress while priorities drift.</p></article><article class="dm rv"><div class="dm-n">08</div><h3>Resilience</h3><div class="dm-l">Why it matters</div><p>Setbacks are guaranteed. Recovering from them is not.</p><div class="dm-l">If it goes unrecognized</div><p>Burnout disguises itself as grit until it doesn't.</p></article><article class="dm rv"><div class="dm-n">09</div><h3>Risk Awareness</h3><div class="dm-l">Why it matters</div><p>Calculated bets are what separate growth from gambling.</p><div class="dm-l">If it goes unrecognized</div><p>Overconfidence is the most common bias in high-stakes decisions.</p></article><article class="dm rv"><div class="dm-n">10</div><h3>Trade-Off Awareness</h3><div class="dm-l">Why it matters</div><p>Every yes is a no to something else.</p><div class="dm-l">If it goes unrecognized</div><p>Trying to do everything becomes a decision to do nothing well.</p></article></div>
+    </div>
+  </section>
+
+  <section class="sec envi bg-grey" id="envi">
+    <div class="wrap envi-grid">
+      <div>
+        <div class="label mono">Free Assessment</div>
+        <h2 class="rv">Take the ENVI&trade; <em>free.</em></h2>
+        <p class="envi-lead">The ENVI&trade; (Entrepreneurial Neuro-Value Index) Professional assessment measures the ten domains of entrepreneurial judgment and shows you how ready you are to make the decisions ahead.</p>
+        <ul class="envi-list"><li><strong>Your profile across all ten domains</strong><span>See exactly where your entrepreneurial judgment is strongest and where it's thinnest.</span></li><li><strong>Your Decision Readiness Index</strong><span>A clear read on whether you're ready to proceed, revise or pause on the decisions in front of you.</span></li><li><strong>Blind spots, named</strong><span>Spot the biases, like overconfidence, that quietly drive high-stakes calls.</span></li><li><strong>Built for business owners</strong><span>Scenarios drawn from real business decisions, not classroom hypotheticals.</span></li><li><strong>A personal report you keep</strong><span>Practical next steps you can act on, with or without working together.</span></li></ul>
+      </div>
+      <form id="enviForm" class="envi-form rv d1" novalidate>
+        <h3>Register for your free assessment</h3>
+        <p class="envi-note">Registration is required. You'll receive your personal access link by email.</p>
+        <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <div class="ef-row">
+          <div class="field"><label class="mono" for="e-first">First name</label><input id="e-first" name="first" autocomplete="given-name" required></div>
+          <div class="field"><label class="mono" for="e-last">Last name</label><input id="e-last" name="last" autocomplete="family-name" required></div>
+        </div>
+        <div class="field"><label class="mono" for="e-email">Email</label><input id="e-email" type="email" name="email" autocomplete="email" required></div>
+        <div class="field"><label class="mono" for="e-biz">Business name</label><input id="e-biz" name="business" autocomplete="organization"></div>
+        <div class="ef-row">
+          <div class="field"><label class="mono" for="e-role">Your role</label><select id="e-role" name="role"><option>Founder / Owner</option><option>Co-founder</option><option>Aspiring founder</option><option>Executive / Manager</option></select></div>
+          <div class="field"><label class="mono" for="e-stage">Business stage</label><select id="e-stage" name="stage"><option>Ideation</option><option>Discovery</option><option>Validation</option><option>Launch</option><option>Operations</option><option>Growth</option><option>Scale</option><option>Exit</option></select></div>
+        </div>
+        <label class="chk"><input type="checkbox" name="agree" required> I agree to the <a href="/privacy.html">privacy policy</a>.</label>
+        <label class="chk"><input type="checkbox" name="research"> I'm open to being contacted about voluntary research on professionals and the entrepreneurial mindset. (Optional)</label>
+        <button type="submit" class="btn btn-gold">Register for free <svg width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 6h19M14 1l5 5-5 5"/></svg></button>
+        <p class="ef-msg" role="status"></p>
+      </form>
     </div>
   </section>
 
@@ -599,7 +653,7 @@ footer .wrap.foot{display:flex; flex-direction:column; justify-content:center; a
     <p class="motto">The spirit of the stag teaches grounded authority, untamed freedom and deep intuition.</p>
     <span class="mono">&copy; 2026 MGH Consultation — All Rights Reserved</span>
     <nav class="foot-nav mono" aria-label="Footer">
-      <a href="#voice">Counsel</a><a href="#story">Story</a><a href="#practice">Practice</a><a href="#why">Expertise</a><a href="#contact">Consultation</a><a href="/privacy.html">Privacy</a>
+      <a href="#voice">Counsel</a><a href="#story">Story</a><a href="#practice">Practice</a><a href="#why">Expertise</a><a href="#envi">Free ENVI&trade;</a><a href="#contact">Consultation</a><a href="/privacy.html">Privacy</a>
     </nav>
   </div>
 </footer>
@@ -637,6 +691,19 @@ footer .wrap.foot{display:flex; flex-direction:column; justify-content:center; a
         n.innerHTML='Sorry, your request didn\'t go through. Please email <a href="mailto:advisory@mghagy.com" style="color:inherit;text-decoration:underline">advisory@mghagy.com</a> directly.';
       });
   });
+
+  var ef=document.getElementById('enviForm');
+  if(ef){ ef.addEventListener('submit',function(e){
+    e.preventDefault(); var f=e.target, msg=f.querySelector('.ef-msg'), btn=f.querySelector('button[type=submit]');
+    if(!f.first.value||!f.last.value||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.value)){ msg.textContent='Please add your name and a valid email.'; return; }
+    if(!f.agree.checked){ msg.textContent='Please accept the privacy policy to register.'; return; }
+    var data={first:f.first.value,last:f.last.value,email:f.email.value,business:f.business.value,role:f.role.value,stage:f.stage.value,research:f.research.checked,agree:true,company:f.company.value};
+    var orig=btn.innerHTML; btn.disabled=true; btn.textContent='Registering…'; msg.textContent='';
+    fetch('/api/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+      .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(){ f.innerHTML='<h3>You\'re registered.</h3><p class="envi-note" style="margin:0">Check your inbox for a confirmation. Your personal ENVI&trade; access link will follow by email.</p>'; })
+      .catch(function(){ btn.disabled=false; btn.innerHTML=orig; msg.innerHTML='Sorry, registration didn\'t go through. Please email <a href="mailto:advisory@mghagy.com">advisory@mghagy.com</a>.'; });
+  }); }
 })();
 </script>
 </body>
