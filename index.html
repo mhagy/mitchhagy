@@ -705,7 +705,7 @@ footer .wrap.foot{display:flex; flex-direction:column; justify-content:center; a
     var orig=btn.innerHTML; btn.disabled=true; btn.textContent='Registering…'; msg.textContent='';
     fetch('/api/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
       .then(function(r){ if(!r.ok) throw 0; return r.json(); })
-      .then(function(){ f.innerHTML='<h3>You\'re registered.</h3><p class="envi-note" style="margin:0">Check your inbox for a confirmation. Your personal ENVI&trade; access link will follow by email.</p>'; })
+      .then(function(d){ f.innerHTML='<h3>You\'re registered.</h3><p class="envi-note" style="margin:0">'+(d&&d.linkSent?'Check your inbox: your personal ENVI&trade; access link is on its way from AEON NCI (noreply@aeonnci.com).':'Check your inbox for a confirmation. Your personal ENVI&trade; access link will follow by email.')+'</p>'; })
       .catch(function(){ btn.disabled=false; btn.innerHTML=orig; msg.innerHTML='Sorry, registration didn\'t go through. Please email <a href="mailto:advisory@mghagy.com">advisory@mghagy.com</a>.'; });
   }); }
 })();
