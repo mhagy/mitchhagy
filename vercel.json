@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/envi", "destination": "/#envi", "permanent": false },
+    { "source": "/ENVI", "destination": "/#envi", "permanent": false }
+  ]
+}
